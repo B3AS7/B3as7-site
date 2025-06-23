@@ -1,116 +1,96 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>B3AS7 Royalty</title>
+  <title>KINGS INTRO — B3AS7</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      width: 100%;
       background: #000;
-      color: #fff;
+      overflow: hidden;
       font-family: 'Arial Black', sans-serif;
-      overflow-x: hidden;
     }
-    .hero {
-      height: 100vh;
-      width: 100vw;
-      background: url('https://b3as7.com/assets/landing-wall.jpg') no-repeat center center/cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
+    .scene {
       position: relative;
+      height: 100%;
+      width: 100%;
+      background: url('https://i.imgur.com/6OB0UnL.jpg') center center / cover no-repeat;
     }
-    .hero img {
+    .character {
+      position: absolute;
+      bottom: 0;
+      left: -200px;
       width: 150px;
-      margin-bottom: 2rem;
-      animation: fadeIn 1.5s ease-in-out;
+      height: auto;
+      animation: walkIn 5s forwards;
+      z-index: 2;
     }
-    .hero h1 {
-      font-size: 2.6rem;
-      line-height: 1.2;
-      font-weight: bold;
-      letter-spacing: 2px;
-      background: linear-gradient(90deg, #fff, #b30000);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 1rem;
-      animation: flicker 2s infinite alternate;
+    .logo-tag {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 220px;
+      opacity: 0;
+      animation: tagReveal 2s ease-out 5s forwards;
+      z-index: 3;
     }
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 300px;
-      margin-bottom: 2rem;
-      color: #bbb;
+    .drip {
+      animation: dripFade 2s ease-in 7s forwards;
     }
-    .cta {
-      padding: 1rem 2rem;
-      background: #b30000;
-      border: none;
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: bold;
-      letter-spacing: 1px;
-      border-radius: 4px;
-      box-shadow: 0 0 10px #b30000;
-      transition: all 0.3s ease-in-out;
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: black;
+      opacity: 0;
+      z-index: 10;
+      animation: fadeOut 2s ease-in 10s forwards;
     }
-    .cta:hover {
-      background: #fff;
-      color: #b30000;
-      box-shadow: 0 0 20px #fff;
-      cursor: pointer;
+    @keyframes walkIn {
+      0% { left: -200px; }
+      100% { left: 35%; }
     }
-    @keyframes flicker {
-      0% {
-        opacity: 1;
-      }
-      50% {
-        opacity: 0.7;
-      }
-      100% {
-        opacity: 1;
-      }
+    @keyframes tagReveal {
+      0% { opacity: 0; transform: scale(0.8) translateX(-50%); }
+      100% { opacity: 1; transform: scale(1) translateX(-50%); }
     }
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+    @keyframes dripFade {
+      0% { filter: brightness(100%); }
+      100% { filter: brightness(120%) drop-shadow(0 0 10px red); }
     }
-    .footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #444;
-      padding: 2rem;
-    }
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .hero img {
-        width: 120px;
-      }
+    @keyframes fadeOut {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
   </style>
 </head>
 <body>
-  <section class="hero">
-    <img src="https://b3as7.com/assets/b3as7-logo.png" alt="B3AS7 Logo" />
-    <h1>Streetwear for the<br />Rebellious Royal</h1>
-    <p>This isn’t fashion. This is confession. This is your throne.</p>
-    <button class="cta">Enter the Kingdom</button>
-  </section>
-  <div class="footer">&copy; 2025 B3AS7. Loyalty is earned.</div>
+  <div class="scene">
+    <img class="character" src="https://i.imgur.com/Z5Q0KaG.png" alt="B3AS7 Tagger" />
+    <img class="logo-tag drip" src="https://i.imgur.com/TCRoZDo.png" alt="B3AS7 Logo Tag" />
+    <div class="overlay"></div>
+  </div>
+
+  <audio id="spray" src="https://assets.mixkit.co/active_storage/sfx/2542/2542-preview.mp3" autoplay></audio>
+  <audio id="clank" src="https://assets.mixkit.co/active_storage/sfx/2132/2132-preview.mp3"></audio>
+  <audio id="voice" src="https://files.catbox.moe/wvhnjo.mp3"></audio>
+
+  <script>
+    const spray = document.getElementById("spray");
+    const clank = document.getElementById("clank");
+    const voice = document.getElementById("voice");
+
+    setTimeout(() => clank.play(), 7300); // Can hits ground
+    setTimeout(() => voice.play(), 7500); // Voice line starts
+    setTimeout(() => {
+      window.location.href = "home.html";
+    }, 12000); // Redirect to main page
+  </script>
 </body>
 </html>
