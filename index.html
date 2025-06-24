@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,81 +16,77 @@
       justify-content: center;
       min-height: 100vh;
       overflow: hidden;
-    }
+    }img.logo {
+  width: 80vw;
+  max-width: 420px;
+  margin-bottom: -20px;
+  transform: rotate(-7deg);
+}
 
-    img.logo {
-      width: 70vw;
-      max-width: 400px;
-      transform: rotate(-7deg);
-      margin: -60px 0 -20px 0;
-    }
+h1 {
+  font-size: 8vw;
+  color: white;
+  text-shadow: 0 0 12px red, 0 0 20px red;
+  margin: 0;
+  letter-spacing: 2px;
+}
 
-    h1 {
-      font-size: 7vw;
-      color: white;
-      text-shadow: 0 0 15px red;
-      margin: 0;
-      letter-spacing: 2px;
-    }
+p.tagline {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin: 10px 0 30px;
+  text-shadow: 0 0 8px red;
+}
 
-    p.tagline {
-      font-size: 1.2rem;
-      color: #ccc;
-      margin: 10px 0 30px;
-    }
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 90%;
+  max-width: 400px;
+}
 
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      width: 90%;
-      max-width: 400px;
-    }
+input[type="email"] {
+  padding: 12px;
+  border-radius: 4px;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+}
 
-    input[type="email"] {
-      padding: 12px;
-      border-radius: 4px;
-      border: none;
-      width: 100%;
-      font-size: 1rem;
-    }
+button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
 
-    button {
-      background: red;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      font-size: 1rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: bold;
-      width: 100%;
-    }
+#success-message {
+  font-family: 'Silkscreen', sans-serif;
+  font-size: 1rem;
+  color: red;
+  text-shadow: 0 0 6px red, 0 0 12px #ff0000;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
 
-    #success-message {
-      font-family: 'Silkscreen', sans-serif;
-      font-size: 1rem;
-      color: red;
-      text-shadow: 0 0 6px red, 0 0 12px #ff0000;
-      margin-top: 10px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
   </style>
 </head>
 <body>
   <img src="assets/b3as7_logo_cleaned.png" alt="B3AS7 Logo" class="logo"/>
   <h1>COMING SOON</h1>
-  <p class="tagline">Streetwear for Street Royals</p>
-
-  <form id="email-form" action="https://formspree.io/f/xovwkbvg" method="POST">
+  <p class="tagline">Streetwear for Street Royals</p>  <form id="email-form" action="https://formspree.io/f/xovwkbvg" method="POST">
     <input type="email" name="email" placeholder="Enter your email" required />
     <button type="submit">JOIN THE MOVEMENT</button>
     <p id="success-message"></p>
-  </form>
-
-  <script>
+  </form>  <script>
     const form = document.getElementById('email-form');
     const successMsg = document.getElementById('success-message');
 
@@ -113,6 +108,5 @@
         successMsg.textContent = 'Something went wrong. Try again.';
       }
     });
-  </script>
-</body>
+  </script></body>
 </html>
