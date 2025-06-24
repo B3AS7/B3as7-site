@@ -1,99 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>B3AS7 | Coming Soon</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
       padding: 0;
-      font-family: 'Share Tech Mono', monospace;
-      color: #fff;
-      text-align: center;
-      background: url('https://i.imgur.com/4TCHThb.jpg') center center / cover no-repeat fixed;
-      background-color: #000;
+      box-sizing: border-box;
     }
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.85);
-      min-height: 100vh;
-      padding: 40px 20px;
+    body {
+      font-family: 'Share Tech Mono', monospace;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
 
-    img.logo {
-      max-width: 250px;
-      filter: drop-shadow(0 0 15px red);
+    .container {
+      padding: 20px;
+      max-width: 420px;
+      width: 100%;
+    }
+
+    .logo {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
+      filter: drop-shadow(0 0 12px red);
+      margin: 0 auto 20px;
     }
 
     h1 {
-      font-size: 2.8rem;
-      margin: 30px 0 10px;
-      text-shadow: 0 0 10px red, 0 0 20px red;
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #fff;
+      text-shadow: 0 0 8px red, 0 0 16px red;
     }
 
     p.tagline {
-      font-size: 1.2rem;
-      color: #bbb;
-      margin-bottom: 30px;
-      text-shadow: 0 0 5px #ff0000;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #ccc;
+      text-shadow: 0 0 6px red;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     input[type="email"] {
-      padding: 12px;
-      width: 80%;
-      max-width: 300px;
-      font-size: 1rem;
+      padding: 10px;
+      width: 90%;
+      max-width: 280px;
       border: none;
       border-radius: 4px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+      font-size: 1rem;
     }
 
     button {
       background-color: #ff0000;
       border: none;
-      padding: 12px 24px;
+      padding: 10px 20px;
       font-size: 1rem;
       color: #fff;
       border-radius: 4px;
       cursor: pointer;
-      text-shadow: 0 0 5px black;
+      text-shadow: 0 0 4px black;
       box-shadow: 0 0 10px red;
     }
 
     .footnote {
-      margin-top: 20px;
+      font-size: 0.85rem;
       color: #ff0000;
       font-weight: bold;
+      margin-top: 10px;
       letter-spacing: 2px;
-      text-shadow: 0 0 10px red;
-    }
-
-    form {
-      margin-top: 20px;
+      text-shadow: 0 0 6px red;
     }
   </style>
 </head>
 <body>
-
-  <div class="overlay">
+  <div class="container">
     <img src="assets/b3as7_logo_cleaned.png" alt="B3AS7 Logo" class="logo" />
     <h1>B3AS7 IS COMING</h1>
     <p class="tagline">Streetwear for Street Royals</p>
 
     <form action="https://formspree.io/f/xovwkbvg" method="POST">
       <input type="email" name="email" placeholder="Enter your email" required />
-      <br />
       <button type="submit">JOIN THE MOVEMENT</button>
     </form>
 
     <p class="footnote">GET ON THE LIST NOW</p>
   </div>
-
 </body>
 </html>
