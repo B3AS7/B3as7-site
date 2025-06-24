@@ -1,104 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>B3AS7 Coming Soon</title>
-  <link rel="icon" href="assets/b3as7_logo_cleaned.png" type="image/png"/>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');body {
+  margin: 0;
+  background: #000;
+  font-family: 'Rubik Mono One', sans-serif;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
-    body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 2rem;
-    }
+.logo {
+  max-width: 90%;
+  width: 400px;
+  filter: drop-shadow(0 0 10px red);
+  margin-bottom: 40px;
+}
 
-    img.logo {
-      width: 60%;
-      max-width: 400px;
-      filter: drop-shadow(0 0 20px red);
-      margin-bottom: 2rem;
-    }
+h1 {
+  font-size: 2.8rem;
+  color: #fff;
+  text-shadow: 0 0 12px red, 0 0 24px red;
+  margin-bottom: 10px;
+}
 
-    h1 {
-      font-size: 2.5rem;
-      color: #fff;
-      text-shadow: 0 0 10px red;
-      margin-bottom: 1rem;
-    }
+p {
+  font-size: 1.1rem;
+  color: #aaa;
+  margin-bottom: 40px;
+}
 
-    p.tagline {
-      font-size: 1rem;
-      color: #bbb;
-      margin-bottom: 2rem;
-      font-style: italic;
-    }
+.form-container {
+  width: 100%;
+  max-width: 500px;
+}
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-      max-width: 400px;
-    }
+form input[type="email"] {
+  width: 80%;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
 
-    input[type="email"] {
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 4px;
-      outline: none;
-    }
+form button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-shadow: 0 0 6px black;
+}
 
-    button {
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 4px;
-      background-color: red;
-      color: #fff;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+form button:hover {
+  background-color: #cc0000;
+}
 
-    button:hover {
-      background-color: #fff;
-      color: red;
-    }
+.tagline {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #f00;
+  text-shadow: 0 0 6px red;
+  font-family: Impact, Charcoal, sans-serif;
+}
 
-    footer {
-      margin-top: 3rem;
-      font-size: 0.8rem;
-      color: #555;
-    }
   </style>
 </head>
-
 <body>
-  <img src="assets/b3as7_logo_cleaned.png" alt="B3AS7 Logo" class="logo"/>
-
+  <img class="logo" src="assets/B3AS7/b3as7_logo_cleaned.png" alt="B3AS7 Logo" />
   <h1>B3AS7 IS COMING</h1>
-  <p class="tagline">Streetwear for the Rebellious Royal</p>
-
-  <form action="https://formspree.io/f/xovwkbvg" method="POST">
-    <input type="email" name="email" placeholder="Enter your email" required />
-    <button type="submit">Get on the list now</button>
-  </form>
-
-  <footer>
-    &copy; 2025 B3AS7. All Rights Reserved.
-  </footer>
+  <p>Streetwear for the Rebellious Royal</p>  <div class="form-container">
+    <form action="https://formspree.io/f/xovwkbvg" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <br />
+      <button type="submit">Join the Movement</button>
+    </form>
+    <div class="tagline">GET ON THE LIST NOW</div>
+  </div>
 </body>
 </html>
