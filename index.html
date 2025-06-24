@@ -1,91 +1,90 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>B3AS7</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B3AS7 Coming Soon</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
     body {
       margin: 0;
-      padding: 0;
       background-color: #000;
-      color: #fff;
+      color: white;
       font-family: 'Share Tech Mono', monospace;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
+      justify-content: center;
+      height: 100vh;
       overflow: hidden;
-    }.logo {
-  background: url('assets/b3as7_logo_cleaned.png') no-repeat center center;
-  background-size: contain;
-  width: 90vw;
-  height: 60vh;
-  transform: rotate(-5deg);
-  filter: drop-shadow(0 0 20px red);
-  margin-top: 1vh;
-}
+    }
 
-h1 {
-  font-size: 1.8rem;
-  margin: 0.5rem 0 0 0;
-  color: #fff;
-  text-shadow: 0 0 10px red;
-  letter-spacing: 2px;
-}
+    img.logo {
+      width: 80vw;
+      max-width: 500px;
+      filter: drop-shadow(0 0 25px red);
+      transform: rotate(-5deg);
+      margin-bottom: 1rem;
+    }
 
-h2 {
-  font-size: 1rem;
-  margin: 0.3rem 0 1.2rem 0;
-  color: #bbb;
-  letter-spacing: 1px;
-}
+    h1 {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+      text-shadow: 0 0 10px red;
+      letter-spacing: 2px;
+    }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 90%;
-  max-width: 400px;
-}
+    p.tagline {
+      font-size: 1rem;
+      margin: 0 0 1.5rem;
+      color: #ccc;
+      text-shadow: 0 0 6px red;
+    }
 
-input[type="email"] {
-  padding: 0.8rem;
-  font-size: 1rem;
-  width: 100%;
-  margin-bottom: 1rem;
-  border: none;
-  border-radius: 4px;
-}
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      max-width: 400px;
+    }
 
-button {
-  padding: 0.8rem;
-  font-size: 1rem;
-  background-color: red;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-  text-shadow: 0 0 5px black;
-}
+    input[type="email"] {
+      padding: 0.8rem;
+      font-size: 1rem;
+      width: 100%;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 4px;
+    }
 
-.confirmation {
-  margin-top: 1rem;
-  color: #fff;
-  font-size: 1rem;
-  text-shadow: 0 0 6px red;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
+    button {
+      padding: 0.8rem;
+      font-size: 1rem;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      text-shadow: 0 0 5px black;
+    }
 
+    .confirmation {
+      margin-top: 1rem;
+      color: #fff;
+      font-size: 1rem;
+      text-shadow: 0 0 6px red;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
   </style>
 </head>
 <body>
-  <div class="logo"></div>
+  <img src="assets/b3as7_logo_cleaned.png" alt="B3AS7 Logo" class="logo" />
   <h1>COMING SOON</h1>
-  <h2>Streetwear for Street Royals</h2>
+  <p class="tagline">Streetwear for Street Royals</p>
   <form id="signup" action="https://formspree.io/f/xovwkbvg" method="POST">
     <input type="email" name="email" placeholder="Enter your email" required>
     <button type="submit">JOIN THE MOVEMENT</button>
@@ -93,23 +92,24 @@ button {
   </form>
   <script>
     const form = document.getElementById('signup');
-    const confirmation = document.getElementById('confirmation');form.addEventListener('submit', function(e) {
-  e.preventDefault();
-  const formData = new FormData(form);
-  fetch(form.action, {
-    method: form.method,
-    body: formData,
-    headers: {
-      'Accept': 'application/json'
-    }
-  }).then(response => {
-    if (response.ok) {
-      confirmation.style.display = 'block';
-      form.reset();
-    }
-  });
-});
+    const confirmation = document.getElementById('confirmation');
 
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          confirmation.style.display = 'block';
+          form.reset();
+        }
+      });
+    });
   </script>
 </body>
 </html>
