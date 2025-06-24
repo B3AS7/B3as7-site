@@ -1,110 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>B3AS7 | Coming Soon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <title>B3AS7 Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Share Tech Mono', monospace;
-      background-color: #000;
+      margin: 0;
+      background: #000;
       color: #fff;
-      text-align: center;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .container {
-      padding: 10px 15px;
-      width: 100%;
-      max-width: 420px;
+      font-family: 'Courier New', monospace;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
     }
 
-    .logo {
-      width: 100%;
-      max-width: 420px;
-      transform: rotate(-5deg);
-      margin-bottom: 6px;
-      filter: drop-shadow(0 0 12px red);
+    img.logo {
+      width: 70vw;
+      max-width: 400px;
+      transform: rotate(-7deg);
+      margin: -60px 0 -20px 0;
     }
 
     h1 {
-      font-size: 1.6rem;
-      margin: 4px 0;
-      color: #fff;
-      text-shadow: 0 0 6px red, 0 0 12px red;
+      font-size: 7vw;
+      color: white;
+      text-shadow: 0 0 15px red;
+      margin: 0;
+      letter-spacing: 2px;
     }
 
     p.tagline {
-      font-size: 0.85rem;
-      margin-bottom: 10px;
+      font-size: 1.2rem;
       color: #ccc;
-      text-shadow: 0 0 4px red;
+      margin: 10px 0 30px;
     }
 
     form {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
-      width: 100%;
+      gap: 12px;
+      width: 90%;
+      max-width: 400px;
     }
 
     input[type="email"] {
-      padding: 8px;
-      width: 90%;
-      max-width: 260px;
-      border: none;
+      padding: 12px;
       border-radius: 4px;
-      font-size: 0.9rem;
+      border: none;
+      width: 100%;
+      font-size: 1rem;
     }
 
     button {
-      background-color: #ff0000;
+      background: red;
+      color: white;
       border: none;
-      padding: 10px 18px;
-      font-size: 0.9rem;
-      color: #fff;
+      padding: 12px 20px;
+      font-size: 1rem;
       border-radius: 4px;
       cursor: pointer;
-      text-shadow: 0 0 4px black;
-      box-shadow: 0 0 10px red;
+      font-weight: bold;
+      width: 100%;
     }
 
-    .footnote {
-      font-size: 0.8rem;
-      color: #ff0000;
-      font-weight: bold;
-      margin-top: 6px;
-      letter-spacing: 2px;
-      text-shadow: 0 0 5px red;
+    #success-message {
+      font-family: 'Silkscreen', sans-serif;
+      font-size: 1rem;
+      color: red;
+      text-shadow: 0 0 6px red, 0 0 12px #ff0000;
+      margin-top: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="assets/b3as7_logo_cleaned.png" alt="B3AS7 Logo" class="logo" />
-    <h1>COMING SOON</h1>
-    <p class="tagline">Streetwear for Street Royals</p>
+  <img src="assets/b3as7_logo_cleaned.png" alt="B3AS7 Logo" class="logo"/>
+  <h1>COMING SOON</h1>
+  <p class="tagline">Streetwear for Street Royals</p>
 
-    <form action="https://formspree.io/f/xovwkbvg" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required />
-      <button type="submit">JOIN THE MOVEMENT</button>
-    </form>
-  </div>
+  <form id="email-form" action="https://formspree.io/f/xovwkbvg" method="POST">
+    <input type="email" name="email" placeholder="Enter your email" required />
+    <button type="submit">JOIN THE MOVEMENT</button>
+    <p id="success-message"></p>
+  </form>
+
+  <script>
+    const form = document.getElementById('email-form');
+    const successMsg = document.getElementById('success-message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        successMsg.textContent = 'Thanks for joining the movement.';
+      } else {
+        successMsg.textContent = 'Something went wrong. Try again.';
+      }
+    });
+  </script>
 </body>
 </html>
