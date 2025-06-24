@@ -18,38 +18,42 @@
       color: #fff;
       text-align: center;
       height: 100vh;
-      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
     }
 
     .container {
-      padding: 10px 20px;
-      max-width: 420px;
+      padding: 10px 15px;
       width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .logo {
       width: 100%;
-      max-width: 320px;
-      height: auto;
+      max-width: 420px;
+      transform: rotate(-5deg);
+      margin-bottom: 6px;
       filter: drop-shadow(0 0 12px red);
-      margin: 0 auto 10px;
     }
 
     h1 {
-      font-size: 1.8rem;
-      margin-bottom: 6px;
+      font-size: 1.6rem;
+      margin: 4px 0;
       color: #fff;
-      text-shadow: 0 0 8px red, 0 0 16px red;
+      text-shadow: 0 0 6px red, 0 0 12px red;
     }
 
     p.tagline {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       margin-bottom: 10px;
       color: #ccc;
-      text-shadow: 0 0 6px red;
+      text-shadow: 0 0 4px red;
     }
 
     form {
@@ -57,6 +61,7 @@
       flex-direction: column;
       align-items: center;
       gap: 8px;
+      width: 100%;
     }
 
     input[type="email"] {
@@ -93,15 +98,13 @@
 <body>
   <div class="container">
     <img src="assets/b3as7_logo_cleaned.png" alt="B3AS7 Logo" class="logo" />
-    <h1>B3AS7 IS COMING</h1>
+    <h1>COMING SOON</h1>
     <p class="tagline">Streetwear for Street Royals</p>
 
     <form action="https://formspree.io/f/xovwkbvg" method="POST">
       <input type="email" name="email" placeholder="Enter your email" required />
       <button type="submit">JOIN THE MOVEMENT</button>
     </form>
-
-    <p class="footnote">GET ON THE LIST NOW</p>
   </div>
 </body>
 </html>
