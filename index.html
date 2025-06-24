@@ -13,34 +13,39 @@
       overflow: hidden;
       font-family: 'Arial Black', sans-serif;
     }
+
     .scene {
       position: relative;
       height: 100%;
       width: 100%;
-      background: url('https://i.imgur.com/6OB0UnL.jpg') center center / cover no-repeat;
+      background: url('https://raw.githubusercontent.com/B3AS7/B3as7-site/main/assets/assets/bg-indy.jpg') center center / cover no-repeat;
     }
+
     .character {
       position: absolute;
       bottom: 0;
       left: -200px;
-      width: 150px;
+      width: 160px;
       height: auto;
-      animation: walkIn 5s forwards;
+      animation: walkIn 4s forwards;
       z-index: 2;
     }
+
     .logo-tag {
       position: absolute;
-      top: 30%;
+      top: 28%;
       left: 50%;
       transform: translateX(-50%);
       width: 220px;
       opacity: 0;
-      animation: tagReveal 2s ease-out 5s forwards;
+      animation: tagReveal 1.5s ease-out 4.2s forwards;
       z-index: 3;
     }
+
     .drip {
-      animation: dripFade 2s ease-in 7s forwards;
+      animation: dripFade 2.5s ease-in 6.5s forwards;
     }
+
     .overlay {
       position: absolute;
       top: 0;
@@ -52,18 +57,22 @@
       z-index: 10;
       animation: fadeOut 2s ease-in 10s forwards;
     }
+
     @keyframes walkIn {
       0% { left: -200px; }
-      100% { left: 35%; }
+      100% { left: 32%; }
     }
+
     @keyframes tagReveal {
       0% { opacity: 0; transform: scale(0.8) translateX(-50%); }
       100% { opacity: 1; transform: scale(1) translateX(-50%); }
     }
+
     @keyframes dripFade {
       0% { filter: brightness(100%); }
-      100% { filter: brightness(120%) drop-shadow(0 0 10px red); }
+      100% { filter: brightness(130%) drop-shadow(0 0 10px red); }
     }
+
     @keyframes fadeOut {
       0% { opacity: 0; }
       100% { opacity: 1; }
@@ -72,8 +81,8 @@
 </head>
 <body>
   <div class="scene">
-    <img class="character" src="https://i.imgur.com/Z5Q0KaG.png" alt="B3AS7 Tagger" />
-    <img class="logo-tag drip" src="https://i.imgur.com/TCRoZDo.png" alt="B3AS7 Logo Tag" />
+    <img class="character" src="https://raw.githubusercontent.com/B3AS7/B3as7-site/main/assets/assets/tagger-b3as7.png" alt="B3AS7 Tagger" />
+    <img class="logo-tag drip" src="https://raw.githubusercontent.com/B3AS7/B3as7-site/main/assets/assets/b3as7-logo-drip.png" alt="B3AS7 Logo Tag" />
     <div class="overlay"></div>
   </div>
 
@@ -86,11 +95,11 @@
     const clank = document.getElementById("clank");
     const voice = document.getElementById("voice");
 
-    setTimeout(() => clank.play(), 7300); // Can hits ground
-    setTimeout(() => voice.play(), 7500); // Voice line starts
+    setTimeout(() => clank.play(), 6200); // Can clank
+    setTimeout(() => voice.play(), 6700); // Voice drop
     setTimeout(() => {
       window.location.href = "home.html";
-    }, 12000); // Redirect to main page
+    }, 11000); // Redirect to main page
   </script>
 </body>
 </html>
