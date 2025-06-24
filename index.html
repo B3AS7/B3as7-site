@@ -1,80 +1,85 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>B3AS7 — Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B3AS7 – Coming Soon</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
+      font-family: 'Rubik Mono One', sans-serif;
       background-color: #000;
       color: #fff;
-      font-family: 'Montserrat', sans-serif;
       text-align: center;
-      padding: 2rem;
     }
     .logo {
-      width: 250px;
-      margin: 0 auto 2rem;
-      filter: drop-shadow(0 0 12px red);
+      width: 200px;
+      margin: 40px auto 10px;
+      display: block;
     }
-    .main-text {
-      font-size: 3rem;
-      font-weight: 900;
+    h1 {
+      font-size: 2.5rem;
+      margin: 20px 0 10px;
       color: white;
-      text-shadow: 0 0 15px red;
+      text-shadow: 0 0 10px red, 0 0 20px red;
     }
-    .subtext {
-      font-size: 1.2rem;
-      color: #ccc;
-      margin: 1rem 0;
-      letter-spacing: 2px;
+    h2 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      color: #aaa;
+      margin-bottom: 30px;
     }
-    .form-container {
-      margin-top: 2rem;
+    form {
+      margin: 0 auto 20px;
+      max-width: 300px;
     }
     input[type="email"] {
-      padding: 1rem;
-      width: 80%;
-      max-width: 400px;
+      width: 100%;
+      padding: 12px;
       font-size: 1rem;
       border: none;
       border-radius: 4px;
-      margin-bottom: 1rem;
+      margin-bottom: 15px;
     }
-    .submit-button {
+    button {
+      width: 100%;
       background-color: red;
-      color: white;
-      padding: 1rem 2rem;
-      font-size: 1rem;
+      color: #fff;
       border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-    .drip-tagline {
-      margin-top: 1rem;
-      font-family: "Courier New", monospace;
+      padding: 12px;
       font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+    .tagline {
+      margin-top: 20px;
       color: red;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
       text-shadow: 0 0 5px red;
-      letter-spacing: 1px;
     }
   </style>
 </head>
 <body>
-  <img class="logo" src="assets/B3AS7/b3as7_logo_cleaned.png" alt="B3AS7 Logo">
-  <div class="main-text">B3AS7 IS COMING</div>
-  <div class="subtext">Streetwear for Street Royals</div>  <div class="form-container">
-    <form action="https://formspree.io/f/xovwkbvg" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required />
-      <br />
-      <button class="submit-button" type="submit">Join the Movement</button>
-    </form>
-    <div class="drip-tagline">GET ON THE LIST NOW</div>
-  </div>
+
+  <!-- B3AS7 Logo -->
+  <img src="assets/B3AS7/b3as7_logo_cleaned.png" alt="B3AS7 Logo" class="logo" />
+
+  <!-- Neon Title -->
+  <h1>B3AS7 IS COMING</h1>
+  <h2>Streetwear for Street Royals</h2>
+
+  <!-- Mailing List Form -->
+  <form action="https://formspree.io/f/xovwkbvg" method="POST">
+    <input type="email" name="email" placeholder="Enter your email" required />
+    <button type="submit">JOIN THE MOVEMENT</button>
+  </form>
+
+  <!-- Tagline -->
+  <div class="tagline">GET ON THE LIST NOW</div>
+
 </body>
 </html>
